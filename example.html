@@ -33,7 +33,7 @@
 					},
 
 					getValue: function(getShownValue) {
-						return (getShownValue ? this.getComponent().getValue() : this.currentSelectedValue);
+						return (getShownValue || !isSelectedItem ? this.getComponent().getValue() : this.currentSelectedValue);
 					},
 
 					initialize: function() {
@@ -75,7 +75,7 @@
 						var doSearchWithTimeout = function() {
 							if (blurTimeout) clearTimeout(blurTimeout);
 							if (searchTimeout) clearTimeout(searchTimeout);
-							
+
 							if (that.isSelectedItem || that.getComponent().getValue() == '') return;
 
 							searchTimeout = setTimeout(function() {

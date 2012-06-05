@@ -19,7 +19,7 @@ Ext.define('Ext.AutocompleteField', {
 	},
 
 	getValue: function(getShownValue) {
-		return (getShownValue ? this.getComponent().getValue() : this.currentSelectedValue);
+		return (getShownValue || !isSelectedItem ? this.getComponent().getValue() : this.currentSelectedValue);
 	},
 
 	initialize: function() {
