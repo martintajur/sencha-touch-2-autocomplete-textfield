@@ -91,3 +91,8 @@ Ext.create('Ext.Container', {
 	}]
 });
 ```
+
+Licence
+=======
+
+MIT Licence.
